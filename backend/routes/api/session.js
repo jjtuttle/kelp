@@ -7,10 +7,10 @@ const { User } = require('../../db/models');
 const router = express.Router();
 
 
-// Log in
-router.post(
-  '/',
-  asyncHandler(async (req, res, next) => {
+// ===========================================================================
+// LOGIN
+// ===========================================================================
+router.post('/', asyncHandler(async (req, res, next) => {
     const { credential, password } = req.body;
 
     const user = await User.login({ credential, password });
@@ -30,6 +30,16 @@ router.post(
     });
   })
 );
+
+// ===========================================================================
+// LOGOUT
+// ===========================================================================
+router.delete('/', (_req, res) => {
+    res.clearCookie('token');
+    return res.json({ message: 'success' });
+});
+
+
 
 
 
