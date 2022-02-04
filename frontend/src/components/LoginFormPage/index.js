@@ -29,12 +29,14 @@ const LoginFormPage = () => {
  
 
     return (
-        <form onSubmit={handleSubmit}>
+    <div className='container'>
+        <form onSubmit={handleSubmit} className='login-form' >
             <ul>
                 {errors.map((error, idx) => (
                     <li key={idx}>{error}</li>
                 ))}
             </ul>
+            <div>
             <label>
                 Username or Email
                 <input 
@@ -44,6 +46,8 @@ const LoginFormPage = () => {
                     required
                 />
             </label>
+            </div>
+            <div>
             <label>
                 Password
                 <input 
@@ -53,8 +57,12 @@ const LoginFormPage = () => {
                     required
                 />
             </label>
+            </div>
+            <div>
             <button type='submit'> Log In</button>
+            </div>
         </form> 
+    </div>
     );
 };
 
