@@ -47,11 +47,6 @@ app.use(
 
 app.use(routes);
 
-// app.use( (err, req, res, next) => {
-//     console.log(err.stack);
-//     res.status(500).emd('Error');
-// });
-
 // Catch unhandled requests and forward to error handler.
 app.use((_req, _res, next) => {
     const err = new Error("The requested resource couldn't be found.");
@@ -74,7 +69,7 @@ app.use((err, _req, _res, next) => {
 // Error formatter 
 app.use((err, _req, res, _next) => {
     res.status(err.status || 500);
-    console.log(err);
+  
     res.json({
         title: err.title || 'Server Error',
         message: err.message,
