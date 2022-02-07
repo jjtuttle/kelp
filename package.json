@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/jjtuttle/kelp/issues"
   },
-  "homepage": "https://github.com/jjtuttle/kelp#readme"
+  "homepage": "https://github.com/jjtuttle/kelp#readme",
+  "dependencies": {
+    "react-favicon": "^0.0.26"
+  }
 }
