@@ -3,7 +3,7 @@ import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import './LoginForm.css';
 import sideIllustrationImg from '../../images/yelp-signup-illustration.png' 
-import whiteLogo from '../../images/yelp-logo.png'
+import whiteLogo from '../../logos/yelp-logo.png'
 
 function LoginForm() {
   const dispatch = useDispatch();
