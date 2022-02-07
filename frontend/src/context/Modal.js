@@ -28,14 +28,21 @@ export function Modal({ onClose, children }) {
 
   return ReactDOM.createPortal(
     <div id="modal">
-      <div id="modal-background" onClick={onClose} />
+      <div id="modal-background" onClick={onClose} 
+        style={{backgroundImage: `url(${bgModel})`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat:'no-repeat',
+                filter:'blur(4px)'
+              }}
+      />
       <div id="modal-content">
-        {/* <div className="bg-image"> */}
-          {/* <img src={bgModel} alt="sea anemone" /> */}
+
+       
           {children}
           </div>
         </div>
-        // </div>
+
         ,
     modalNode
   );
