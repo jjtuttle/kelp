@@ -1,26 +1,24 @@
 /* CSS  for Login Modal */
 
  h4 {
-     border: 1px solid #000;
     color: #D32323;
     text-align: center;
 
 }
 .main-content {
-    border: 1px solid #000;
     position: fixed;
     z-index: 20;
 }
 
 .header {   
-   height: 40px;
+    height: 40px;
     background: #D32323;
     color: white;
     padding: 10px 0;
     font-family: RockoUltraFLF;
     font-size: 21px;
     position: relative;
-    /* z-index: 1012!important; */
+    border-radius: 8px 8px 0 0;
 }
 
 
@@ -39,10 +37,9 @@
 /* make columns */
 
 .modal-column {
-    border: 1px solid #000;
-    background-color: #c3c3c3;
+    background-color: ##FFF;
     float: left;
-    width: 600px;
+    width: 400px;
     padding: 0 15px;
     display: block;
 }
@@ -75,14 +72,14 @@
 
 .modal-content {
 
-border: 1px solid #000;
+
 }
 
 
 
 
 .login-info {
-border: 1px solid #000;
+    margin: 24px;
 
 }
 
@@ -90,95 +87,164 @@ border: 1px solid #000;
 /* third party buttons for login */
 
 .third-party-logins {
-border: 1px solid #000;
+    margin: 24px;
+
 }
 
 .facebook {
+    margin: 8px 0px;
 
 }
 
 .facebook-btn {
+    color: #fff;
+    background: #1877f2;
+    border: 1px solid #1877f2;
+    height: 30px;
+    width: 250px;
+    padding: 1px 13px;
+    border-radius: 3px;
 
 }
 
 .google {
+    margin: 8px 0px;
 
 }
 .google-btn {
+    color: #666;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    height: 30px;
+    width: 250px;
+    padding: 1px 13px;
+    border-radius: 3px;
 
 }
 
 .apple {
+    margin: 8px 0px;
 
 }
 
 .apple-btn {
+    color: #fff;
+    background: #000;
+    border: 1px solid #000;
+    height: 30px;
+    width: 250px;
+    padding: 1px 13px;
+    border-radius: 3px;
 
 }
 
 
 .or {
-border: 1px solid #000;
+    margin: 24px;
+    color: #666666;
 }
 
 
 .login-container {
-border: 1px solid #000;
+    margin: 24px;
+
 }
 
 .user-input {
+    box-sizing: border-box;
+    height: 30px;
+    width: 250px;
+    margin: 0 0 10px;
+    padding: 5px 5px;
+    background: #fff;
+    border: 1px solid #999;
+    border-radius: 3px;
+    font-size: 14px;
 
 }
 
 .password-input {
+    box-sizing: border-box;
+    height: 30px;
+    width: 250px;
+    margin: 0 0 10px;
+    padding: 5px 5px;
+    background: #fff;
+    border: 1px solid #999;
+    border-radius: 3px;
+    font-size: 14px;
 
 }
 
 
-.forgot-password {
-border: 1px solid #000;
-
+.forgot-password   {
+    color: #0073bb;
+    text-decoration: none;
+    font-size: 12px;
+    text-align: center;
+    padding: 5px 0 5px 0;
+    
 }
 
 .login-btn {
+    padding: 1px 0px;
+    font-size: 16px;
+    color: #fff;
+    background: #d32323;
+    border: 1px solid #d32323;
+    height: 30px;
+    width: 250px;
+    font-weight: bold;
 
 }
 
 .sign-up {
-border: 1px solid #000;
+
+
 }
 
 
 
 /* Footer */
 .footer {
+    display: flex;
+    flex-wrap: row wrap;
     margin: 0;
-    padding: 0;
+    padding: 50px;
     border: 0;
     vertical-align: baseline;
     background-color: #F0F0F0;
+    color: #2D2E2E;
+}
+
+.footer > * {
+    flex: 1 100%
 }
 
 .about-column {
-border: 1px solid #000;
+    display: flex;
+
 }
 
 .discover-column {
-border: 1px solid #000;
+
 
 }
 
 .kelp-business-column {
-border: 1px solid #000;
+
+
 }
 
 .language-column {
-border: 1px solid #000;
+
+
 }
 
 
 .copyright {
-border: 1px solid #000;
+    
+
 }
 
 

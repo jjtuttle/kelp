@@ -50,7 +50,7 @@ function LoginForm() {
           </p>
           <div className="third-party-logins">
             <div className="facebook">
-              <button className="facebook-btn">Continue with Facebook</button>
+              <button className="facebook-btn" onClick={(e) => e.preventDefault.default()}>Continue with Facebook</button>
             </div>
             <div className="google">
               <button className="google-btn">Continue with Google</button>
@@ -64,8 +64,8 @@ function LoginForm() {
           </div>
 
           <div className="login-container">
-            <div className="user-input">
-              <input
+            <div >
+              <input className="user-input"
                 type="text"
                 value={credential}
                 onChange={(e) => setCredential(e.target.value)}
@@ -73,8 +73,8 @@ function LoginForm() {
                 placeholder="Email"
               />
             </div>
-            <div className="password-input">
-              <input
+            <div >
+              <input className="password-input"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -82,11 +82,12 @@ function LoginForm() {
                 placeholder="Password"
               />
               <div className="forgot-password">
-                <span>[FORGOT PASSWORD]</span>
+                <a href="http://localhost:3000/">Forgot password?</a>
               </div>
             </div>
-            <div className="login-btn">
-              <button type="submit">Log In</button>
+            <div>
+              <button className="login-btn"
+                type="submit">Log In</button>
             </div>
             <div className="sign-up">
               <span>New to Kelp? [SIGN UP]</span>
@@ -109,11 +110,11 @@ function LoginForm() {
                 <span>Countries</span>
               </div>
             </div>
-            <div className="copyright">
+            
+          </div>
+  <div className="copyright">
               <span>Copyright © 2004–2022 Kelp Inc. [KELP & LOGO], [LOGO] burst and related marks are registered trademarks of Kelp.</span>
             </div>
-          </div>
-  
 
         </form>
       </div>
