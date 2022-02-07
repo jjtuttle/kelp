@@ -33,7 +33,7 @@ export function Modal({ onClose, children }) {
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat:'no-repeat',
-                filter:'blur(4px)'
+                // filter:'blur(4px)'
               }}
       />
       <div id="modal-content">
