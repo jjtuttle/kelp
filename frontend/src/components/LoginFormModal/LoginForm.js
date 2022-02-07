@@ -82,11 +82,12 @@ function LoginForm() {
                 placeholder="Password"
               />
               <div className="forgot-password">
-                <span>[FORGOT PASSWORD]</span>
+                <a href="http://localhost:3000/">Forgot password?</a>
               </div>
             </div>
-            <div className="login-btn">
-              <button type="submit">Log In</button>
+            <div>
+              <button className="login-btn"
+                type="submit">Log In</button>
             </div>
             <div className="sign-up">
               <span>New to Kelp? [SIGN UP]</span>

@@ -37,10 +37,9 @@
 /* make columns */
 
 .modal-column {
-
     background-color: ##FFF;
     float: left;
-    width: 600px;
+    width: 400px;
     padding: 0 15px;
     display: block;
 }
@@ -89,9 +88,11 @@
 
 .third-party-logins {
     margin: 24px;
+
 }
 
 .facebook {
+    margin: 8px 0px;
 
 }
 
@@ -101,13 +102,13 @@
     border: 1px solid #1877f2;
     height: 30px;
     width: 250px;
-    padding: 10px 13px;
+    padding: 1px 13px;
     border-radius: 3px;
 
 }
 
 .google {
-    
+    margin: 8px 0px;
 
 }
 .google-btn {
@@ -116,12 +117,13 @@
     border: 1px solid #ccc;
     height: 30px;
     width: 250px;
-    padding: 10px 13px;
+    padding: 1px 13px;
     border-radius: 3px;
 
 }
 
 .apple {
+    margin: 8px 0px;
 
 }
 
@@ -131,7 +133,7 @@
     border: 1px solid #000;
     height: 30px;
     width: 250px;
-    padding: 10px 13px;
+    padding: 1px 13px;
     border-radius: 3px;
 
 }
@@ -175,12 +177,24 @@
 }
 
 
-.forgot-password {
-
-
+.forgot-password   {
+    color: #0073bb;
+    text-decoration: none;
+    font-size: 12px;
+    text-align: center;
+    padding: 5px 0 5px 0;
+    
 }
 
 .login-btn {
+    padding: 1px 0px;
+    font-size: 16px;
+    color: #fff;
+    background: #d32323;
+    border: 1px solid #d32323;
+    height: 30px;
+    width: 250px;
+    font-weight: bold;
 
 }
 
