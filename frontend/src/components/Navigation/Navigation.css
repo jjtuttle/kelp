@@ -1,0 +1,63 @@
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap; /* assumes you only want one row */
+    
+}
+
+li > a {
+    padding: 0 20px;
+    padding: 5px 5px;
+    margin: 25px;
+}
+
+ .menu {
+    clear:both;
+    float:left;
+    margin-top:1em;
+    padding-bottom:1em;
+    width:100%;
+    background-color:#D32323;
+    background-repeat:no-repeat;
+}
+
+ul.menu {
+    display: table;
+    margin-left: auto;
+    margin-right: 0em;
+}
+.menu li
+/* horizontal menu layout */
+ {
+    display: inline-block;
+    border-radius: 10px;
+    margin-right:30px;
+
+}
+.menu li a:hover
+/* link style on-mouse-over */
+ {
+    color:#FFFFFF;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.menu li:hover
+/* button style on-mouse-over */
+ {
+    border-radius: 10px;
+    background-color: #dd417f;
+}
+.menu li a
+/* link style */
+ {
+    color:#FFFFFF;
+    font-size: 1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.7em 1em 0.7em 1em;
+}

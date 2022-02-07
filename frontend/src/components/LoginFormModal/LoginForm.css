@@ -1,113 +1,187 @@
+/* CSS  for Login Modal */
 
-
-
-
-
-.container {
+ h4 {
+     border: 1px solid #000;
+    color: #D32323;
     text-align: center;
-    justify-content: center;
-    display: flex;
-    padding: 90px 0 90px 0;
-    background-color: rgb(252, 252, 252);
 
 }
-.sub-container {
-    display: flex;
-    justify-content: center;
-    height: 550px;
-    width: 35%;
-    box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
-    padding-top: 30px;
-    border-radius: 60px;
-    background-color: white;
-
+.main-content {
+    border: 1px solid #000;
+    position: fixed;
+    z-index: 20;
 }
 
-.img {
-    padding-top: 20px;
-    justify-content: center;
-    display: flex;
-}
-
-.img-container {
-    background-color: rgb(223, 221, 221);
-    border-radius: 150px;
-    display: flex;
-    height: 115px;
-    width: 115px;
-}
-
-.profile {
-    height: 110px;
-    width: 110px;
-    border-radius: 150px;
+.header {   
+   height: 40px;
+    background: #D32323;
+    color: white;
+    padding: 10px 0;
+    font-family: RockoUltraFLF;
+    font-size: 21px;
+    position: relative;
+    /* z-index: 1012!important; */
 }
 
 
-.login-form {
-   
-
-}
-
-.flex-input {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 10px;
-}
-
-input[type='text'], [type='password'] {
-    padding: 3px;
+.header-info {
+    display: block;
+    text-align: center;
     
 }
 
-input {
-    width: 300px;
-    height: 50px;
-    border-radius: 60px;
-    box-shadow: inset 0px 0px 25px 0px #888;
-    border: none;
-    outline: none;
+.display-errors {
+
     background-color: #fff;
+    color: red;
+}
+
+/* make columns */
+
+.modal-column {
+    border: 1px solid #000;
+    background-color: #c3c3c3;
+    float: left;
+    width: 600px;
+    padding: 0 15px;
+    display: block;
+}
+
+/* right side for illustration  */
+.illustration-column {
+
+    background-color: #fff;
+    float: right;
+    width: 400px;
+    padding: 0 15px;
+    margin-top: 80px;
+    box-sizing: border-box;
 }
 
 
-label {
-    width: 300px;
-    height: 30px;
-    border-radius: 130px;
-    box-shadow: inset 0px 0px 25px 0px #888;
+.image {
+    /* yelp-signup-illustration.png */
+    /* border: 1px solid #000; */
+    width: 230px;
+    height: 200px;
+    vertical-align: middle;
+    margin-left: 30px;
 }
 
-.email {
-    height: 25px;
-    width: 25px;
-    position: absolute;
-    padding: 14px 0 0 25px;
+
+
+
+/* Modal content */
+
+.modal-content {
+
+border: 1px solid #000;
 }
 
-.password {
-    height: 35px;
-    width: 35px;
-    position: absolute;
-    padding: 14px 0 0 25px;
-}
 
-.button {
-    width: 360px;
-    height: 40px;
-    background-color: #d55bd1a7;
-    border-radius: 60px;
-    color: white;
-    font-size: 25px;
-    border: none;
+
+
+.login-info {
+border: 1px solid #000;
 
 }
 
-.name {
+
+/* third party buttons for login */
+
+.third-party-logins {
+border: 1px solid #000;
+}
+
+.facebook {
+
+}
+
+.facebook-btn {
+
+}
+
+.google {
+
+}
+.google-btn {
+
+}
+
+.apple {
+
+}
+
+.apple-btn {
+
+}
+
+
+.or {
+border: 1px solid #000;
+}
+
+
+.login-container {
+border: 1px solid #000;
+}
+
+.user-input {
+
+}
+
+.password-input {
+
+}
+
+
+.forgot-password {
+border: 1px solid #000;
 
 }
 
 .login-btn {
-    padding-top: 25px;
+
 }
+
+.sign-up {
+border: 1px solid #000;
+}
+
+
+
+/* Footer */
+.footer {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    background-color: #F0F0F0;
+}
+
+.about-column {
+border: 1px solid #000;
+}
+
+.discover-column {
+border: 1px solid #000;
+
+}
+
+.kelp-business-column {
+border: 1px solid #000;
+}
+
+.language-column {
+border: 1px solid #000;
+}
+
+
+.copyright {
+border: 1px solid #000;
+}
+
+
+
+
 
