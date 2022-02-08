@@ -1,0 +1,19 @@
+/* LandingPage CSS here */
+
+
+.lp-main-container {
+
+   height: 800px;
+   width: 100%;
+   
+}
+
+.image {
+    background-position: center;
+    background-size: cover;
+    background-repeat:no-repeat;
+    width: 100%;
+    height: 800px;
+    margin: 0px;
+
+}
