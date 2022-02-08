@@ -93,7 +93,17 @@ module.exports = (sequelize, DataTypes) => {
 // ===========================================================================
   User.associate = function(models) {
     // associations can be defined here
+    User.hasMany(models.Location, { foreignKey: 'userId'});
+    User.hasMany(models.Review, { foreignKey: 'userId'});
   };
+
+  // // See if the userID has a review to a location to edit it
+  // User.prototype.hasReview = async function(locationId) {
+  //   const review = await sequelize.models.Review.findOne({where: {userId: this.id, locationId }});
+
+  //   return Boolean(review);
+  // };
+
   return User;
 };
 

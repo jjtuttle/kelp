@@ -60,7 +60,7 @@ function LoginForm() {
             </div>
           </div>
           <div className="or">
-            <span>------ OR ------</span>
+           <p> <hr style={{display: 'inline-block', width: '100px', margin:'0'}}/><span style={{ padding: '10px', fontSize:'15px'}}>OR</span><hr style={{display:'inline-block', width: '100px', margin:'0'}}/></p>
           </div>
 
           <div className="login-container">
