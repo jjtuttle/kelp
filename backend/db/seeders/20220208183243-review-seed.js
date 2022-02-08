@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
  
-   return queryInterface.bulkInsert('Review', [
+   return queryInterface.bulkInsert('Reviews', [
       {rating: '3', body:'It as OK, would dive again but not all the time', userId: 1, locationId: 1},
       {rating: '4', body:'Greta find, we dive there at least twice a month!!! Love it!', userId: 2, locationId: 1},
       {rating: '2', body:'Ya, I would stay away from that place if you want to keep your gear long. Else you will need to buy special cleaners and spend a couple extra hours right after dive soaking it all.', userId: 3, locationId: 2},
@@ -14,7 +14,7 @@ module.exports = {
 
   down: (queryInterface, Sequelize) => {
 
-   return queryInterface.bulkDelete('Review', null, {
+   return queryInterface.bulkDelete('Reviews', null, {
      
    });
   }
