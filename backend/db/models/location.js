@@ -26,9 +26,9 @@ module.exports = (sequelize, DataTypes) => {
   Location.associate = function(models) {
     // associations can be defined here
     Location.belongsTo(models.User, { foreignKey: 'userId' });
-
-    // For deleting a review that a user did to a location 
-    Location.hasMany(models.Location, { foreignKey: 'locationId', onDelete: 'CASCADE'});
+    Location.hasMany(models.Review, {foreignKey: 'locationId'});
+    // // For deleting a review that a user did to a location 
+    // Location.hasMany(models.Location, { foreignKey: 'locationId', onDelete: 'CASCADE'});
     
   };
   return Location;
