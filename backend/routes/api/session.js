@@ -1,3 +1,5 @@
+
+
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { setTokenCookie, restoreUser } = require('../../utils/auth');
@@ -51,6 +53,7 @@ router.post('/', validateLogin ,asyncHandler(async (req, res, next) => {
 // LOGOUT
 // ===========================================================================
 router.delete('/', (_req, res) => {
+
     res.clearCookie('token');
     return res.json({ message: 'success' });
 });

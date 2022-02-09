@@ -66,6 +66,15 @@
     margin-left: 30px;
 }
 
+.login-btn {
+    color: #fff;
+    display: block;
+    padding: 9px 12px 10px;
+    font-size: 14px;
+    line-height: 1.28571em;
+    font-weight: 700;
+    background: none;
+}
 
 
 

@@ -1,5 +1,8 @@
 /* LandingPage CSS here */
 
+* {
+    margin: 0;
+}
 
 .lp-main-container {
 
@@ -8,12 +11,45 @@
    
 }
 
+.a-link-logo-home {
+    color: #fff;
+    text-decoration: none;
+    
+}
+
 .image {
     background-position: center;
     background-size: cover;
     background-repeat:no-repeat;
     width: 100%;
-    height: 800px;
-    margin: 0px;
+    height: 100%;
+    margin: auto 0px;
 
 }
+
+.overlay, header-logo-text {
+    position: absolute;
+    top: 8%;
+    right:0;
+    left: 0;
+    bottom: 87%;
+    color: #fff;
+    font-family: RockoUltraFLF-Bold;
+    font-weight: 700;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    
+}
+
+.overlay, logo-image {
+
+}
+
+
+
+
+
+
+
+

@@ -4,11 +4,13 @@ import location from './location';
 
 
 import thunk from "redux-thunk";
+import locationReducer from "./location";
 
 const rootReducer = combineReducers({
   // add reducer functions here
-  location,
+  location: locationReducer,
   session: sessionReducer,
+  
 });
 
 let enhancer;
