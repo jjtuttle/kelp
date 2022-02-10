@@ -1,8 +1,8 @@
 /* LandingPage CSS here */
-
+/* 
 * {
     margin: 0;
-}
+} */
 
 .lp-main-container {
 
@@ -27,7 +27,7 @@
 
 }
 
-.overlay, header-logo-text {
+.overlay {
     position: absolute;
     top: 8%;
     right:0;
@@ -37,11 +37,10 @@
     font-family: RockoUltraFLF-Bold;
     font-weight: 700;
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     
 }
-
+ /* align-items: center; */
 .overlay, logo-image {
 
 }

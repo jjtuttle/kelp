@@ -37,12 +37,12 @@ export const removeLocation = (locationId) => ({
 // GET /api/locations/
 export const getLocations = () => async (dispatch) => {
     const res = await csrfFetch(`/api/locations/`);
-
+console.log(res);
     if (res.ok) {
         const list = await res.json();
         dispatch(loadLocations(list));
     }
-}
+};
 
 
 // PUT /api/locations/:id

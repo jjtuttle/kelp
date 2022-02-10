@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
 
 
@@ -7,10 +7,11 @@ import './LandingPage.css';
 import logoColor from '../../images/kelp-logo-color.png';
 import { getLocations } from '../../store/location';
 
-const LandingPage = () => {
+const LandingPage = (props) => {
+    const [location, setLocation] = useState(props.location || '');
+
     const dispatch = useDispatch();
     
-
     // Load All Locations
   useEffect(() => {
     dispatch(getLocations());
@@ -33,7 +34,6 @@ const LandingPage = () => {
                 </div>
             </div>
             </div>
-            
            <div className="page-content">
                <p style={{color:'red', fontSize:'20px'}}>*** hello there, card content down here ***</p>
            </div>

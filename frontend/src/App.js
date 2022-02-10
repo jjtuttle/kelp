@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
 import { loadLocations } from './store/location';
 import { Locations } from "./components/Locations/Locations";
+import { SearchResults } from "./components/Search/SearchResults/SearchResults";
 
 
 function App() {
@@ -16,10 +17,6 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-  // // Load All Locations
-  // useEffect(() => {
-  //   dispatch(loadLocations());
-  // }, [dispatch]);
 
 
   return (
@@ -30,16 +27,19 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route>
-            <Route exact to="/" />
-              <LandingPage />
+          <Route path="/" >
+            <LandingPage />
           </Route>
-          <Route exact path='locations'>
+          <Route path='/locations' >
             <Locations />
+          </Route>
+          <Route path='/search'>
+            <SearchResults />
           </Route>
         </Switch>
       )}
     </>
+
   );
 }
 

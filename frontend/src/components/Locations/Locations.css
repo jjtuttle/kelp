@@ -1,0 +1,59 @@
+
+
+.main-container {
+    background-color: lightgoldenrodyellow;
+    height: 800px;
+    width: 100%;
+   
+}
+
+.image {
+    background-position: center;
+    background-size: cover;
+    background-repeat:no-repeat;
+    width: 100%;
+    height: 100%;
+    margin: auto 0px;
+
+}
+
+.title {
+
+}
+
+.overlay, header-logo-text {
+    position: absolute;
+    top: 8%;
+    right:0;
+    left: 0;
+    bottom: 87%;
+    color: #fff;
+    font-family: RockoUltraFLF-Bold;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+
+.overlay, header-logo-text {
+    position: absolute;
+    top: 8%;
+    right:0;
+    left: 0;
+    bottom: 87%;
+    color: #fff;
+    font-family: RockoUltraFLF-Bold;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+
+
+
+
+

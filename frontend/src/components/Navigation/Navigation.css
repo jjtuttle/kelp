@@ -1,13 +1,4 @@
 
-ul,  {
-    /* list-style-type: none;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: nowrap; assumes you only want one row
-  */
-}
 
 .nav.menu {
     /* background-color: pink; */
@@ -26,7 +17,7 @@ ul,  {
     background: none;
 }
 
-button {
+.button {
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
     background: transparent;
     box-shadow: none;
@@ -63,11 +54,7 @@ button:hover {
     background-repeat:no-repeat;
 }
 
-/* ul.menu {
-    display: table;
-    margin-left: auto;
-    margin-right: 0em;
-} */
+
 .menu li
 /* horizontal menu layout */
  {
