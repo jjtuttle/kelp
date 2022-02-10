@@ -1,20 +1,10 @@
-/* LandingPage CSS here */
-/* 
-* {
-    margin: 0;
-} */
 
-.lp-main-container {
 
-   height: 800px;
-   width: 100%;
+.main-container {
+    background-color: lightgoldenrodyellow;
+    height: 800px;
+    width: 100%;
    
-}
-
-.a-link-logo-home {
-    color: #fff;
-    text-decoration: none;
-    
 }
 
 .image {
@@ -27,7 +17,11 @@
 
 }
 
-.overlay {
+.title {
+
+}
+
+.overlay, header-logo-text {
     position: absolute;
     top: 8%;
     right:0;
@@ -40,11 +34,22 @@
     justify-content: center;
     
 }
- /* align-items: center; */
-.overlay, logo-image {
 
+
+
+.overlay, header-logo-text {
+    position: absolute;
+    top: 8%;
+    right:0;
+    left: 0;
+    bottom: 87%;
+    color: #fff;
+    font-family: RockoUltraFLF-Bold;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    
 }
-
 
 
 

@@ -5,6 +5,11 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
+import { loadLocations } from './store/location';
+import  Locations  from "./components/Locations/Locations";
+import Location from "./components/Locations/Location";
+// import  SearchResults  from "./components/Search/SearchResults/SearchResults";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -12,6 +17,8 @@ function App() {
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
+
+
 
   return (
     <>
@@ -21,13 +28,19 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route>
-            <Route exact to="/" />
-              <LandingPage />
+          <Route exact path="/" >
+            <LandingPage />
+          </Route>
+          <Route exact path='/locations' >
+            <Locations />
+          </Route>
+          <Route path='/location'>
+            <Location />
           </Route>
         </Switch>
       )}
     </>
+
   );
 }
 
