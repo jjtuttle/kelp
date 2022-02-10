@@ -38,7 +38,7 @@
 /* make columns */
 
 .modal-column {
-    background-color: ##FFF;
+    background-color: #FFF;
     float: left;
     width: 400px;
     padding: 0 15px;
@@ -67,7 +67,7 @@
 }
 
 .login-btn {
-    color: #fff;
+    color: #d32323;
     display: block;
     padding: 9px 12px 10px;
     font-size: 14px;

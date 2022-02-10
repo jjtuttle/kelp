@@ -6,8 +6,8 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
 import { loadLocations } from './store/location';
-import { Locations } from "./components/Locations/Locations";
-import { SearchResults } from "./components/Search/SearchResults/SearchResults";
+import  Locations  from "./components/Locations/Locations";
+// import  SearchResults  from "./components/Search/SearchResults/SearchResults";
 
 
 function App() {
@@ -27,15 +27,15 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/" >
+          <Route exact path="/" >
             <LandingPage />
           </Route>
-          <Route path='/locations' >
+          <Route exact path='/locations' >
             <Locations />
           </Route>
-          <Route path='/search'>
+          {/* <Route path='/search'>
             <SearchResults />
-          </Route>
+          </Route> */}
         </Switch>
       )}
     </>

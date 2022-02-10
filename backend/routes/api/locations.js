@@ -2,21 +2,39 @@ const express = require("express");
 const asyncHandler = require("express-async-handler");
 const { route } = require(".");
 
-const { Location } = require('../../db/models');
+const { Location, Image } = require('../../db/models');
 
 const router = express.Router();
 
-router.get('/',
-    asyncHandler(async function (req, res) {
-        const locations = await Location.findAll();
-        return res.json(locations);
+
+//TODO: Custom Validators **********************
+
+
+router.get('/', asyncHandler(async (req, res) => {
+        const location = await Location.findAll(); //TODO {include: image}
+        return res.json(location);
     })
 );
 
+router.get('/:id', asyncHandler(async (req, res) => {
+    const location = await Location.findByPk(req.params.id) //TODO ,{include: Image}
+    return res.json(location);
+}))
+
+
+//TODO: POST
 
 
 
 
+
+
+//TODO: PUT
+
+
+
+
+// TODO: DELETE
 
 
 

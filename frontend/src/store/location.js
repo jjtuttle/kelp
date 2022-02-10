@@ -7,14 +7,22 @@ import { csrfFetch } from '../store/csrf';
  const UPDATE_LOCATION = "location/UPDATE_LOCATION";
  const REMOVE_LOCATION = "location/REMOVE_LOCATION";
  const ADD_LOCATION = "location/ADD_LOCATION";
+ const LOAD_LOCATION = "location/LOAD_LOCATION";
 
 
 // ===========================================================================
 // TYPES
 // ===========================================================================
+// load ALL locations from DB
 export const loadLocations = list => ({
     type: LOAD_LOCATIONS,
-    list
+    list,
+});
+
+// load single location once clicked on
+export const loadLocation = location => ({
+    type: LOAD_LOCATION,
+    location,
 });
 
 export const updateLocation = (location) => ({
@@ -28,7 +36,7 @@ export const addLocation = (location) => ({
 });
 
 export const removeLocation = (locationId) => ({
-    type: ADD_LOCATION,
+    type: REMOVE_LOCATION,
     locationId,
 });
 // ===========================================================================
@@ -37,13 +45,22 @@ export const removeLocation = (locationId) => ({
 // GET /api/locations/
 export const getLocations = () => async (dispatch) => {
     const res = await csrfFetch(`/api/locations/`);
-console.log(res);
     if (res.ok) {
         const list = await res.json();
         dispatch(loadLocations(list));
+        return list;
     }
 };
 
+// GET /api/location/:id
+export const getLocation = (id) => async (dispatch) => {
+    const res = await csrfFetch(`/api/location/${id}`);
+    if (res.ok) {
+        const location = await res.json();
+        dispatch(loadLocation(location));
+        return location;
+    }
+};
 
 // PUT /api/locations/:id
 export const editLocation = (payload, id) => async (dispatch, getState) => {
@@ -86,10 +103,10 @@ const locationReducer = (state = initialState, action) => {
                 allLoc[location.id] = location;
             });
             return allLoc;
-            // return {
-            //     ...allLoc,
-            //     ...state
-            // };
+        case LOAD_LOCATION:
+            const loc = {...state};
+            loc[action.location.id] = action.location; 
+            return loc;
         case REMOVE_LOCATION:
             return {
                 ...state,
@@ -123,11 +140,6 @@ const locationReducer = (state = initialState, action) => {
             return state;
     }
 }
-
-
-
-
-
 
 
 export default locationReducer;

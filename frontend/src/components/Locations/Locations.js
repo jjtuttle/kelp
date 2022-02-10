@@ -7,12 +7,10 @@ import locationsHeaderImg from '../../images/locations-header.jpg';
 
 import './Locations.css';
 
-export function Locations(props) {
+function Locations(props) {
     const dispatch = useDispatch();
-    const locations = useSelector((state) => Object.values(state.location.locations));
+    const locations = useSelector((state) => Object.values(state.location));
     const sessionUser = useSelector((state) => state.session.user);
-
-    console.log("PROPS__________-------",props.locations);
 
     useEffect(() => {
         dispatch(getLocations())
@@ -25,26 +23,24 @@ export function Locations(props) {
 
 
     return (
- 
+            <>
             <div >
-                <p>LOCATIONS </p>
-                <h1>LOCATIONS LIST PAGE</h1>
+                
                 <div className="image"
                 style={{backgroundImage: `url(${locationsHeaderImg})`}} 
                 alt='divers' 
                 >
                 </div>
               <div>
+                  <h1>Dive Site Locations</h1>
                  {locations?.map(({id, title}) => (
-                    <NavLink key={id} className='site' to={`/location/${id}`}>
-                        <p className='title'>{title} ??????? </p>
+                    <NavLink key={id} className='location' to={`/location/${id}`}>
+                        <p className='title'>{title}</p>
                     </NavLink>
                 ))}
             </div>
-
             </div>
-            
-
+        </>
     );
 };
 

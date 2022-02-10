@@ -1,13 +1,13 @@
 
 
 .nav.menu {
-    /* background-color: pink; */
+    background-color: #d32323;
     display: flex;
     flex-direction: row-reverse;
     
 }
 
-.login-btn {
+.nav-login-btn {
     color: #fff;
     display: block;
     padding: 9px 12px 10px;
@@ -15,6 +15,8 @@
     line-height: 1.28571em;
     font-weight: 700;
     background: none;
+    border: none;
+    font-size: 14px;
 }
 
 .button {
@@ -28,20 +30,31 @@
     font-weight: 700;
 }
 
-button:hover {
+.nav-login-btn:hover {
     border-bottom: 2px solid #fff;
 }
 
+.signup-a-btn {
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    background: transparent;
+    box-shadow: none;
+    margin-top: 0px;
+    padding: 7px 14px 8px;
+    color: #fff;
+    border: none;
+}
+
+
 .signup-a-btn:hover {
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
-    background-color: #fff;
-    color: #000;
+    background-color: transparent;
+    color: #000000;
     box-shadow: none;
     border-radius: 4px;
     border: 1px solid #fff;
-    margin-top: -2px;
-    padding: 7px 24px 8px
-    
+    margin-top: 0px;
+    padding: 7px 14px 8px;
+    font-size: 14px;
 }
 
 
@@ -59,7 +72,7 @@ button:hover {
 /* horizontal menu layout */
  {
     display: flex;
-    justify-content: end;
+    /* justify-content: end; */
     margin-right:30px;
 
 }
