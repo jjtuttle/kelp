@@ -8,16 +8,19 @@ import './Locations.css';
 
 
 
-const Location = (props) => {
+const Location = () => {
+    const dispatch = useDispatch();
+    const { id } = useParams();
+    const loc = useSelector((state) => state.location[id]);
     const user = useSelector((state) => state.session.user);
     const userId = useSelector((state) => state.session.user?.id);
-    const loc = useSelector((state) => state.location[id]);
+    
     // console.log(loc);
-    console.log('!!!!!!!!!!!!!!!!!!!!!!!!');
+    // console.log('!!!!!!!!!!!!!!!!!!!!!!!!');
 
-    const dispatch = useDispatch();
+    
 
-    const { id } = useParams();
+    
     
     const [showEdit, setShowEdit] = useState(false);
 
@@ -27,6 +30,10 @@ const Location = (props) => {
     useEffect(() => {
         dispatch(getLocation(id));
     }, [dispatch, id]);
+
+    if(!loc) {
+        console.log('NOTHING FOUND!');
+    }
 
     // TODO: 1. user CANCEL form
     // TODO: 2. user DELETE location
