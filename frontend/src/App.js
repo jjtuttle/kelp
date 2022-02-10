@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
 import { loadLocations } from './store/location';
 import  Locations  from "./components/Locations/Locations";
+import Location from "./components/Locations/Location";
 // import  SearchResults  from "./components/Search/SearchResults/SearchResults";
 
 
@@ -33,9 +34,9 @@ function App() {
           <Route exact path='/locations' >
             <Locations />
           </Route>
-          {/* <Route path='/search'>
-            <SearchResults />
-          </Route> */}
+          <Route path='/location'>
+            <Location />
+          </Route>
         </Switch>
       )}
     </>
