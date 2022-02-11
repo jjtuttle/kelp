@@ -1,6 +1,6 @@
 const express = require("express");
 const asyncHandler = require("express-async-handler");
-const { route } = require(".");
+// const { route } = require(".");
 
 const { Location, Image } = require('../../db/models');
 
@@ -11,13 +11,17 @@ const router = express.Router();
 
 
 router.get('/', asyncHandler(async (req, res) => {
-        const location = await Location.findAll(); //TODO {include: image}
+        const location = await Location.findAll({include: [
+        {model: Image}
+    ]});
+    console.log('location -------------=>' , location);
+    
         return res.json(location);
     })
 );
 
 router.get('/:id', asyncHandler(async (req, res) => {
-    const location = await Location.findByPk(req.params.id) //TODO ,{include: Image}
+    const location = await Location.findByPk(req.params.id,{include: Image});
     return res.json(location);
 }))
 
