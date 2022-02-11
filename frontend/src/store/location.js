@@ -64,6 +64,9 @@ export const getLocation = (id) => async (dispatch) => {
 
 // PUT /api/locations/:id
 export const editLocation = (payload, id) => async (dispatch, getState) => {
+    const {  title, body, address, state, zipCode } = payload;
+    console.log('Dive Site PUT',  title, body, address, state, zipCode );
+
     const res = await csrfFetch(`/api/locations/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -72,6 +75,7 @@ export const editLocation = (payload, id) => async (dispatch, getState) => {
     if (res.ok) {
         const location = await res.json();
         dispatch(updateLocation(location));
+        console.log('location return', location);
         return location;
     }
 };

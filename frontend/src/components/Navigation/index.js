@@ -21,11 +21,12 @@ function Navigation({ isLoaded }){
       </>
     );
   }
-
+  // Navbar links 
   return (
     <ul className='nav menu'>
       <li className='current active parent'>
-        {/* <NavLink exact to="/">Home</NavLink> */}
+        <NavLink exact to="/">Home</NavLink>
+        <NavLink exact to='/locations'>Locations</NavLink>
         {isLoaded && sessionLinks}
       </li>
     </ul>

@@ -7,24 +7,23 @@ import locationsHeaderImg from '../../images/locations-header.jpg';
 
 import './Locations.css';
 
-function Locations(state) {
+function Locations() {
     const dispatch = useDispatch();
-    const locations = useSelector((state) => Object.values(state.location));
-    const sessionUser = useSelector((state) => state.session.user);
+    const loc = useSelector((state) => {
+        return state.loc;
+    })
+    // const locObj = Object.values(loc);
+    
+    // const locations = useSelector((state) => Object.values(state.location));
+    // const sessionUser = useSelector((state) => state.session.user);
 
     useEffect(() => {
         dispatch(getLocations())
     }, [dispatch]);
 
-    // const loc = useSelector((state) => {
-    //     return state.loc;
-    // })
+    console.log('loc ================+>', loc);
 
-    // const locObj = Object.values(loc);
-
-
-
-    if(!locations) {
+    if(!loc) {
         return (<div> </div> );
     }
     // TODO: check if user logged in *********************************
@@ -32,7 +31,7 @@ function Locations(state) {
 
     return (
             <>
-            <div key={locations}>
+            <div key={loc.id}>
                 
                 <div className="image"
                 style={{backgroundImage: `url(${locationsHeaderImg})`}} 
@@ -41,9 +40,9 @@ function Locations(state) {
                 </div>
             <div>
                 <h1>Dive Site Locations</h1>
-                {locations?.map(({id, title}) => (
-                    <NavLink key={id} className='location' to={`/location/${id}`}>
-                        <p className='title'>{title}</p>
+                {loc.map(({l}) => (
+                    <NavLink key={l.id} className='location' to={`/location/${l.id}`}>
+                        <p className='title'>{l.title}</p>
                     </NavLink>
                 ))}
             </div>
