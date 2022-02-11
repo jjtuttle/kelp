@@ -13,9 +13,7 @@ const router = express.Router();
 router.get('/', asyncHandler(async (req, res) => {
         const location = await Location.findAll({include: [
         {model: Image}
-    ]});
-    console.log('location -------------=>' , location);
-    
+    ]}); 
         return res.json(location);
     })
 );
