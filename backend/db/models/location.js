@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     Location.belongsTo(models.User, { foreignKey: 'userId' });
     Location.hasMany(models.Review, {foreignKey: 'locationId'});
-    Location.hasMany(models.Image, {foreignKey: 'imageId'});
+    Location.hasMany(models.Image, {foreignKey: 'id'});
  
   };
   return Location;

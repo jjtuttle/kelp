@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Image = sequelize.define('Image', {
-    imageId: DataTypes.INTEGER,
+    locationId: DataTypes.INTEGER,
     url: DataTypes.STRING
   }, {});
   Image.associate = function(models) {

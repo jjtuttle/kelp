@@ -10,12 +10,12 @@ const router = express.Router();
 //TODO: Custom Validators **********************
 
 
-router.get('/', asyncHandler(async (req, res) => {
-        const location = await Location.findAll({include: [
-        {model: Image}
-    ]}); 
-        return res.json(location);
-    })
+router.get('/', asyncHandler(async (req, res, next) => {
+        const locations = await Location.findAll({include: [{model: Image}]}); 
+        
+        if(locations || locations.length) return res.json({locations});
+        else res.json({locations: {message: 'Error in retrieving locations.'}});
+    }) 
 );
 
 router.get('/:id', asyncHandler(async (req, res) => {
