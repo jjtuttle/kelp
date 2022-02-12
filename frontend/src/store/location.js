@@ -45,11 +45,11 @@ export const removeLocation = (locationId) => ({
 // GET /api/locations/
 export const getLocations = () => async (dispatch) => {
     const res = await csrfFetch(`/api/locations/`);
-    if (res.ok) {
-        const list = await res.json();
-        dispatch(loadLocations(list));
-        return list;
-    }
+
+    if(!res.ok) throw res;
+
+    const{ locations } = await res.json();
+    dispatch(addLocation(locations));
 };
 
 // GET /api/location/:id
@@ -61,6 +61,23 @@ export const getLocation = (id) => async (dispatch) => {
         return location;
     }
 };
+
+// POST /api/location/new
+export const createLocation = (payload) => async (dispatch) => {
+    const { userId, title, body, address, city, state, zipCode } = payload;
+    console.log('Create Location Info ~~~~~~~~~~~~>', userId, title, body, address, city, state, zipCode);
+    const res = await csrfFetch('/api/location/new', {
+        method: 'POST',
+        headers: { ' Content-Type': 'application/json'},
+        body: JSON.stringify({ userId, title, body, address, city, state, zipCode }),
+    });
+    if(!res.ok) throw res;
+
+    const { location } = await res.json();
+    dispatch(addLocation(location));
+    return location;
+}
+
 
 // PUT /api/locations/:id
 export const editLocation = (payload, id) => async (dispatch, getState) => {
@@ -95,18 +112,20 @@ export const deleteLocation = (id) => async dispatch => {
 // ===========================================================================
 // REDUCER
 // ===========================================================================
-const initialState = {
-    list: []
-};
+// const initialState = {
+//     list: []
+// }; initialState <- from params state = initialState
 
-const locationReducer = (state = initialState, action) => {
+const locationReducer = (state = {} , action) => {
+    let newState;
+
     switch (action.type) {
         case LOAD_LOCATIONS:
-            const allLoc = {};
-            action.list.forEach(location => {
-                allLoc[location.id] = location;
+            newState = {...state};
+            action.locations.forEach((location) => {
+                newState[location.id] = location;
             });
-            return allLoc;
+            return newState;
         case LOAD_LOCATION:
             const loc = {...state};
             loc[action.location.id] = action.location; 
@@ -119,22 +138,9 @@ const locationReducer = (state = initialState, action) => {
                 }
             };
         case ADD_LOCATION:
-            if (!state[action.location.id]) {
-                const newState = {
-                    ...state,
-                    [action.location.id]: action.location
-                };
-                const locationList = newState.list.map(id => newState[id]);
-                locationList.push(action.location);
-                return newState;
-            }
-            return {
-                ...state,
-                [action.location.id]: {
-                    ...state[action.location.id],
-                    ...action.location
-                }
-            };
+            newState = {...state};
+            newState[action.location.id] = action.location;
+            return newState;
         case UPDATE_LOCATION:
             return {
                 ...state,

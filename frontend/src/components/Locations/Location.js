@@ -16,7 +16,7 @@ const Location = () => {
     const user = useSelector((state) => state.session.user);
     const userId = useSelector((state) => state.session.user?.id);
 
-    console.log('loc.Image --------->>>>>>>>', loc.Images);
+    console.log('loc.Image --------->>>>>>>>', loc[Image]);
 
     const [showEdit, setShowEdit] = useState(false);
 
