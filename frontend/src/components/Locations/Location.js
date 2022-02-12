@@ -38,8 +38,10 @@ const Location = () => {
     return (
         <div className="main-container">
             <div className="image">
+ location-details
                 <img alt='dive location'
                     src={loc?.Images[0] ? loc?.Images[0].url : noImage }
+
                 />
             </div>
             <div className="username">
