@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 
 import { getLocation, deleteLocation } from '../../store/location';
+import noImage from '../../images/no-image.jpg';
 
 import './Locations.css';
 
@@ -14,14 +15,9 @@ const Location = () => {
     const loc = useSelector((state) => state.location[id]);
     const user = useSelector((state) => state.session.user);
     const userId = useSelector((state) => state.session.user?.id);
-    
-    // console.log(loc);
-    // console.log('!!!!!!!!!!!!!!!!!!!!!!!!');
 
-    
+    console.log('loc.Image --------->>>>>>>>', loc[Image]);
 
-    
-    
     const [showEdit, setShowEdit] = useState(false);
 
     const history = useHistory();
@@ -31,8 +27,9 @@ const Location = () => {
         dispatch(getLocation(id));
     }, [dispatch, id]);
 
-    if(!loc) {
-        console.log('NOTHING FOUND!');
+    if(!id) {
+        console.log('NOTHING FOUND!', loc);
+        return null;
     }
 
     // TODO: 1. user CANCEL form
@@ -41,8 +38,10 @@ const Location = () => {
     return (
         <div className="main-container">
             <div className="image">
-                <img alt='dive location' 
-                    // src={loc?.Images[0] ? loc?.Images[0].url : noImage }
+ location-details
+                <img alt='dive location'
+                    src={loc?.Images[0] ? loc?.Images[0].url : noImage }
+
                 />
             </div>
             <div className="username">

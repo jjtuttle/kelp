@@ -34,9 +34,9 @@ const LandingPage = (props) => {
                 </div>
             </div>
             </div>
-           <div className="page-content">
-               <p style={{color:'red', fontSize:'20px'}}>*** hello there, card content down here ***</p>
-           </div>
+        <div className="page-content">
+            <p style={{color:'red', fontSize:'20px'}}>*** hello there, card content down here ***</p>
+        </div>
         </div>
         </>
     );
