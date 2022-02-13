@@ -1,12 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import {  updateLocation } from "../../store/location";
+import { useHistory } from "react-router-dom";
 
 
 const EditLocation = ({location, hideForm}) => {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
-    
+    const history = useHistory();
     const [url, setUrl] = useState(location?.url);
     const [title, setTitle] = useState(location?.title);
     const [body , setBody] = useState(location?.body);
@@ -14,9 +15,13 @@ const EditLocation = ({location, hideForm}) => {
     const [state, setState] = useState(location?.state);
     const [zipCode, setZipCode] = useState(location?.zipCode);
 
+
+    const redirect = () => history.push(`/location/${location[0].id }`);
+
     const handleSubmit =  (e) => {
         e.preventDefault();
        
+        
         const payload = {
             id: location[0].id ,
             image: {
@@ -29,7 +34,10 @@ const EditLocation = ({location, hideForm}) => {
             state,
             zipCode
         };
+
         const updatedLocation =  dispatch(updateLocation(payload, location));
+        redirect();
+  
         if(updatedLocation) {
             if(updatedLocation) {
                 hideForm();
@@ -47,7 +55,7 @@ const EditLocation = ({location, hideForm}) => {
                         Image URL
                         <input type="text"
                             placeholder="Image URL"
-                            value={url ? url : ''}
+                            value={url}
                             onChange={(e) => setUrl(e.target.value)}
                         />
                     </label>

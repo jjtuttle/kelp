@@ -83,13 +83,13 @@ export const createLocation = (payload) => async (dispatch) => {
 export const updateLocation = (payload, location) => async (dispatch) => {
     const { id, userId, title, body, address, city, state, zipCode } = payload;
     // const { id } = location;
-    console.log('3333333333:::::>',id);
+
     const res = await csrfFetch(`/api/location/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
     })
- console.log('resssss------>', res);
+ 
     if (res.ok) {
         const location = await res.json();
         dispatch(editLocation(location));
