@@ -59,7 +59,7 @@ router.put('/:id', csrfProtection, asyncHandler(async (req, res) => {
     };
     const currentImage = await image.update(newUrlImage);
     const updatedLocation = await location.update(req.body);
-    updatedLocation.dataValues.Images = [currentImage];
+    updatedLocation.dataValues.Images = currentImage;
 
     return res.json(updatedLocation);
 }));

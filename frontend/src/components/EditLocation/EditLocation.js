@@ -56,7 +56,7 @@ const EditLocation = ({location, hideForm}) => {
                     <label>Title
                         <input type="text"
                             placeholder="Title"
-                            value={title}
+                            value={location.title}
                             onChange={(e) => setTitle(e.target.value)}
                         />
                         </label>

@@ -42,6 +42,7 @@ const Location = () => {
     }
 
     const editLocationClick = (e) => {
+        console.log('Edit Location Click ---::::::::>>>>');
         setShowEdit((prevState) => !prevState);
     }
 

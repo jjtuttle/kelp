@@ -13,7 +13,7 @@ import { csrfFetch } from '../store/csrf';
 // ===========================================================================
 // TYPES
 // ===========================================================================
-// load ALL locations from DB
+// load ALL locations  
  const loadLocations = (locations) => {
     return {
         type: LOAD_LOCATIONS,
@@ -22,7 +22,7 @@ import { csrfFetch } from '../store/csrf';
 };
 
 // load single location once clicked on
-const loadLocation = location => ({
+const loadLocation = (location) => ({
     type: LOAD_LOCATION,
     location,
 });
@@ -82,14 +82,14 @@ export const createLocation = (payload) => async (dispatch) => {
 
 // PUT /api/locations/:id
 export const updateLocation = (location) => async (dispatch) => {
-    const res = await csrfFetch(`/api/locations/${location.id}`, {
+    const res = await csrfFetch(`/api/location/${location.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(location)
     })
     if (res.ok) {
         const location = await res.json();
-        dispatch(updateLocation(location));
+        dispatch(editLocation(location));
         return location;
     }
 };
