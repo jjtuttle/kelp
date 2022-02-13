@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import {  updateLocation } from "../../store/location";
 import { useHistory } from "react-router-dom";
-
+import { useEffect } from "react";
 
 const EditLocation = ({location, hideForm}) => {
     const dispatch = useDispatch();
@@ -43,7 +43,12 @@ const EditLocation = ({location, hideForm}) => {
                 hideForm();
             }
         }
+        
     };
+
+    // useEffect(() => {
+    //     title = '';
+    // })
 
 
     return (

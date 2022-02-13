@@ -27,6 +27,7 @@ function Navigation({ isLoaded }){
       <li className='current active parent'>
         <NavLink exact to="/">Home</NavLink>
         <NavLink exact to='/locations'>Locations</NavLink>
+        <NavLink exact to='/location/new'>Add Location</NavLink>
         {isLoaded && sessionLinks}
       </li>
     </ul>

@@ -36,7 +36,9 @@ router.get('/:id', asyncHandler(async (req, res) => {
 
 
 //TODO: POST
-router.post('/', csrfProtection, asyncHandler(async(req, res) => {
+router.post('/location', csrfProtection, asyncHandler(async(req, res) => {
+    const { title, body, city, state, zipCode } = req.body;
+    console.log('POST A NEW LOCATION -------> ',title, body, city, state, zipCode);
     const location = await Location.create(req.body);
     const image = await Image.create({
         url: req.body.image.url,
@@ -46,7 +48,7 @@ router.post('/', csrfProtection, asyncHandler(async(req, res) => {
     return res.json(location);
 }));
 
-// frontend/src/store/location.js 
+
 //TODO: PUT
 router.put('/:id',csrfProtection, asyncHandler(async (req, res) => {
     

@@ -5,11 +5,10 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
-import { loadLocations } from './store/location';
 import  Locations  from "./components/Locations/Locations";
 import Location from "./components/Locations/Location";
 import Footer from "./components/Footer/Footer";
-
+import AddLocation from './components/AddLocation/AddLocation'
 
 
 function App() {
@@ -41,6 +40,10 @@ function App() {
 
           <Route path='/location/:id'>
             <Location />
+          </Route>
+
+          <Route path='/location/new'>
+            <AddLocation />
           </Route>
 
         </Switch>
