@@ -4,8 +4,8 @@ import { csrfFetch } from '../store/csrf';
 
 // for dive sites page in card layout
  const LOAD_LOCATIONS = "location/LOAD_LOCATIONS";
- const UPDATE_LOCATION = "location/UPDATE_LOCATION";
- const REMOVE_LOCATION = "location/REMOVE_LOCATION";
+ const EDIT_LOCATION = "location/EDIT_LOCATION";
+ const DELETE_LOCATION = "location/DELETE_LOCATION";
  const ADD_LOCATION = "location/ADD_LOCATION";
  const LOAD_LOCATION = "location/LOAD_LOCATION";
 
@@ -14,29 +14,31 @@ import { csrfFetch } from '../store/csrf';
 // TYPES
 // ===========================================================================
 // load ALL locations from DB
-export const loadLocations = list => ({
-    type: LOAD_LOCATIONS,
-    list,
-});
+ const loadLocations = (locations) => {
+    return {
+        type: LOAD_LOCATIONS,
+        locations,
+    };
+};
 
 // load single location once clicked on
-export const loadLocation = location => ({
+const loadLocation = location => ({
     type: LOAD_LOCATION,
     location,
 });
 
-export const updateLocation = (location) => ({
-    type: UPDATE_LOCATION,
+ const editLocation = (location) => ({
+    type: EDIT_LOCATION,
     location,
 });
 
-export const addLocation = (location) => ({
+ const addLocation = (location) => ({
     type: ADD_LOCATION,
     location,
 });
 
-export const removeLocation = (locationId) => ({
-    type: REMOVE_LOCATION,
+ const removeLocation = (locationId) => ({
+    type: DELETE_LOCATION,
     locationId,
 });
 // ===========================================================================
@@ -49,7 +51,7 @@ export const getLocations = () => async (dispatch) => {
     if(!res.ok) throw res;
 
     const{ locations } = await res.json();
-    dispatch(addLocation(locations));
+    dispatch(loadLocations(locations));
 };
 
 // GET /api/location/:id
@@ -65,8 +67,7 @@ export const getLocation = (id) => async (dispatch) => {
 // POST /api/location/new
 export const createLocation = (payload) => async (dispatch) => {
     const { userId, title, body, address, city, state, zipCode } = payload;
-    console.log('Create Location Info ~~~~~~~~~~~~>', userId, title, body, address, city, state, zipCode);
-    const res = await csrfFetch('/api/location/new', {
+    const res = await csrfFetch('/api/location', {
         method: 'POST',
         headers: { ' Content-Type': 'application/json'},
         body: JSON.stringify({ userId, title, body, address, city, state, zipCode }),
@@ -80,31 +81,27 @@ export const createLocation = (payload) => async (dispatch) => {
 
 
 // PUT /api/locations/:id
-export const editLocation = (payload, id) => async (dispatch, getState) => {
-    const {  title, body, address, state, zipCode } = payload;
-    console.log('Dive Site PUT',  title, body, address, state, zipCode );
-
-    const res = await csrfFetch(`/api/locations/${id}`, {
+export const updateLocation = (location) => async (dispatch) => {
+    const res = await csrfFetch(`/api/locations/${location.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(location)
     })
     if (res.ok) {
         const location = await res.json();
         dispatch(updateLocation(location));
-        console.log('location return', location);
         return location;
     }
 };
 
-// DELETE /api/locations/:id
-export const deleteLocation = (id) => async dispatch => {
-    const res = await csrfFetch(`/api/locations/${id}`, {
+// DELETE /api/location/:id
+export const deleteLocation = (id) => async (dispatch) => {
+    const res = await csrfFetch(`/api/location/${id}`, {
         method: 'DELETE'
     });
     if (res.ok) {
-        const locationId = await res.json();
-        dispatch(removeLocation(id));
+        const location = await res.json();
+        dispatch(removeLocation(location.id));
     }
 };
 
@@ -128,24 +125,20 @@ const locationReducer = (state = {} , action) => {
             return newState;
         case LOAD_LOCATION:
             const loc = {...state};
-            loc[action.location.id] = action.location; 
+            loc[action.location.location.id] = action.location.location; 
             return loc;
-        case REMOVE_LOCATION:
-            return {
-                ...state,
-                [action.locationId]: {
-                    ...state[action.locationId],
-                }
-            };
+        case DELETE_LOCATION:
+            newState = {...state};
+            delete newState[action.locationId];
+            return newState;
         case ADD_LOCATION:
             newState = {...state};
             newState[action.location.id] = action.location;
             return newState;
-        case UPDATE_LOCATION:
-            return {
-                ...state,
-                [action.location.id]: action.location
-            };
+        case EDIT_LOCATION:
+            const editState = {...state};
+            editState[action.location.id] = action.location;
+            return editState;
         default:
             return state;
     }

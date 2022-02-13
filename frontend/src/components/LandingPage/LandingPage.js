@@ -6,6 +6,7 @@ import lpHeader from '../../images/header-image.jpg';
 import './LandingPage.css';
 import logoColor from '../../images/kelp-logo-color.png';
 import { getLocations } from '../../store/location';
+import Search from '../Search/Search';
 
 const LandingPage = (props) => {
     const [location, setLocation] = useState(props.location || '');
@@ -33,9 +34,16 @@ const LandingPage = (props) => {
                     <a className='a-link-logo-home' href='/'><img src={logoColor} alt='logo color' /></a>
                 </div>
             </div>
+            <div className="search-container">
+                <Search />
+            </div>
             </div>
         <div className="page-content">
-            <p style={{color:'red', fontSize:'20px'}}>*** hello there, card content down here ***</p>
+            <div className="lp-search-container">
+                <div className="lp-search-bar">
+
+                </div>
+            </div>
         </div>
         </div>
         </>

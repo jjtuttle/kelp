@@ -8,7 +8,8 @@ import LandingPage from "./components/LandingPage";
 import { loadLocations } from './store/location';
 import  Locations  from "./components/Locations/Locations";
 import Location from "./components/Locations/Location";
-// import  SearchResults  from "./components/Search/SearchResults/SearchResults";
+import Footer from "./components/Footer/Footer";
+
 
 
 function App() {
@@ -43,7 +44,9 @@ function App() {
           </Route>
 
         </Switch>
+        
       )}
+      <Footer />
     </>
 
   );

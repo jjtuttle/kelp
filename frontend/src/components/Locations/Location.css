@@ -1,0 +1,91 @@
+
+
+
+.h1-loc {
+    padding: 5px;
+    margin: 5px;
+    text-shadow: 1px 1px 3px rgba(123, 123, 123, 0.9);
+    color: rgb(57, 56, 56);
+    
+}
+
+#main-container-loc  {
+    background-color: rgba(254, 254, 246, 0.507);
+    height: 800px;
+    width: 800px;
+    list-style: none;
+    border-bottom: 1px solid red;
+    margin: auto ;
+
+}
+
+
+
+#image-container-loc {
+    padding-top: 50px;
+    margin-left: 0px;
+}
+
+#image-loc {
+    width: 100%;
+    height: 300px;
+    object-fit: fill;
+    padding: 5px;
+    margin: 5px;
+}
+
+.body-loc {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+    color: rgb(60, 60, 60);
+}
+
+.username-loc {
+    padding: 5px;
+    margin: 5px;
+    color: #505050;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.city-loc {
+    /* padding: 5px; */
+    margin: 10px;
+    color: #505050;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.state-loc {
+    /* padding: 5px; */
+    margin: 10px;
+    color: #505050;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.zip-code-loc {
+    /* padding: 5px; */
+    margin: 10px;
+    color: #505050;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.btn-container-loc {
+    margin: 10px;
+    
+}
+
+.delete-btn-loc {
+    background-color: pink;
+    color: white;
+}
+
+.edit-btn-loc {
+    background-color: pink;
+    color: white;
+}
