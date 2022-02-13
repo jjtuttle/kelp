@@ -1,0 +1,31 @@
+
+
+
+.footer-container {
+    box-shadow: 0px 10px 15px -8px rgb(238, 237, 237);
+    width: 100%;
+    bottom: auto;
+    display: flex;
+    height: 50px;
+    background-color: #ffe9e970;
+    position: fixed;
+    bottom: 0;
+    
+}
+p {
+    font-size: 12px;
+    font-weight: 600;
+    /* padding: 20px; */
+    margin: auto;
+}
+
+#github-icon
+ {
+    padding-top: 6px;
+    padding-left: 10px;
+    font-size: 30px;
+    color: rgb(69, 69, 69);
+    transform: translate(-35%);
+    background-color: transparent;
+
+}

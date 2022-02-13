@@ -4,7 +4,8 @@
     background-color: #d32323;
     display: flex;
     flex-direction: row-reverse;
-    
+    position: fixed;
+    top: 0;
 }
 
 .nav-login-btn {

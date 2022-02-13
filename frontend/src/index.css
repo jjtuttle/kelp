@@ -40,3 +40,7 @@ q:before,q:after {
 }
 abbr,acronym { border:0;
 } */
+* {
+    font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
+
+}

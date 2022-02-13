@@ -5,9 +5,10 @@
 } */
 
 .lp-main-container {
-
-   height: 800px;
-   width: 100%;
+    position: fixed;
+    top: 90px;
+    height: 800px;
+    width: 100%;
    
 }
 
