@@ -15,10 +15,10 @@ const EditLocation = ({location, hideForm}) => {
     const [zipCode, setZipCode] = useState(location?.zipCode);
 
     const handleSubmit =  (e) => {
-        e.prevent.default();
-
+        e.preventDefault();
+       
         const payload = {
-            id: location.id,
+            id: location[0].id ,
             image: {
                 url
             },
@@ -29,7 +29,7 @@ const EditLocation = ({location, hideForm}) => {
             state,
             zipCode
         };
-        const updatedLocation =  dispatch(updateLocation(payload));
+        const updatedLocation =  dispatch(updateLocation(payload, location));
         if(updatedLocation) {
             if(updatedLocation) {
                 hideForm();

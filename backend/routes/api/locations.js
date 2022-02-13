@@ -1,8 +1,9 @@
 const express = require("express");
 const asyncHandler = require("express-async-handler");
-const { check } = require("express-validator");
+// const { check } = require("express-validator");
 const csrf = require("csurf");
 const { Location, Image, User } = require('../../db/models');
+
 const router = express.Router();
 
 const csrfProtection = csrf({ cookie: true });
@@ -45,20 +46,25 @@ router.post('/', csrfProtection, asyncHandler(async(req, res) => {
     return res.json(location);
 }));
 
-
+// frontend/src/store/location.js 
 //TODO: PUT
-router.put('/:id', csrfProtection, asyncHandler(async (req, res) => {
+router.put('/:id',csrfProtection, asyncHandler(async (req, res) => {
+    
     const locationId = Number(req.params.id);
+    const loc = await Location.findByPk(locationId, {include: {model: User} })
+    // console.log('locationddddddddddd::::::',loc);
     const imageUrl = req.body.image.url;
     const image = await Image.findByPk(req.params.id);
-    const location = await Location.finsByPk(locationId);
+    // const location = await Location.findByPk(locationId);
+    // const user = await User.findByPk()
     const newUrlImage = {
         id: image.id,
-        locationId: location.id,
+        locationId: loc.id,
         url: req.body.image.url
     };
     const currentImage = await image.update(newUrlImage);
-    const updatedLocation = await location.update(req.body);
+    const updatedLocation = await loc.update(req.body);
+    // const user = await user.update(req.body);
     updatedLocation.dataValues.Images = currentImage;
 
     return res.json(updatedLocation);
