@@ -76,9 +76,9 @@ router.put('/:id',csrfProtection, asyncHandler(async (req, res) => {
 // TODO: DELETE
 // Delete
 router.delete('/:id', asyncHandler(async (req, res) => {
-    const locationId = await Location.deleteLocation(req.params.id);
-    return res.json({locationId});
-    // const locationId = Number;
+    const locId = Number(req.params.id);
+    Location.destroy( {where: {id: locId} } );
+    return res.json(locId);
 }));
 
 
