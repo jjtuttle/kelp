@@ -36,7 +36,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
 
 
 //TODO: POST
-router.post('/', csrfProtection, asyncHandler(async(req, res) => {
+router.post('/location', csrfProtection, asyncHandler(async(req, res) => {
     const location = await Location.create(req.body);
     const image = await Image.create({
         url: req.body.image.url,
@@ -46,17 +46,14 @@ router.post('/', csrfProtection, asyncHandler(async(req, res) => {
     return res.json(location);
 }));
 
-// frontend/src/store/location.js 
+
 //TODO: PUT
 router.put('/:id',csrfProtection, asyncHandler(async (req, res) => {
     
     const locationId = Number(req.params.id);
     const loc = await Location.findByPk(locationId, {include: {model: User} })
-    // console.log('locationddddddddddd::::::',loc);
     const imageUrl = req.body.image.url;
     const image = await Image.findByPk(req.params.id);
-    // const location = await Location.findByPk(locationId);
-    // const user = await User.findByPk()
     const newUrlImage = {
         id: image.id,
         locationId: loc.id,
@@ -74,9 +71,9 @@ router.put('/:id',csrfProtection, asyncHandler(async (req, res) => {
 // TODO: DELETE
 // Delete
 router.delete('/:id', asyncHandler(async (req, res) => {
-    const locationId = await Location.deleteLocation(req.params.id);
-    return res.json({locationId});
-    // const locationId = Number;
+    const locId = Number(req.params.id);
+    Location.destroy( {where: {id: locId} } );
+    return res.json(locId);
 }));
 
 
