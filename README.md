@@ -30,6 +30,7 @@ This project is currently in development. Users can add a dive site location: Im
 9. Start the services in the frontend directory, whih then should open the project in your default browser. If not, open a tab and navigate to: http://localhost:3000 <br /><br />
       * `npm start` <br /><br />
 
-10. The splash page will launch and from there you can login with the *Demo User* button automatically, *signup* and create your own login (within the validations), or *login* with a current user.
+10. The splash page will launch and from there you can login with the *Demo User* button automatically, *signup* and create your own login (within the validations), or *login* with a current user.<br /><br />
+11. Once logged in, navigate to Locations to see a list of dive site postings, click add a location to add your own, or *[comming soon]* add a review to a posted dive site location
 
 
