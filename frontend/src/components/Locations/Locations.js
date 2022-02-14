@@ -41,14 +41,14 @@ const Locations = () => {
     return (
         <>
             <div>
-
-                {/* <div className="image"
+                {/* 
+                <div className="image"
                 style={{backgroundImage: `url(${locationsHeaderImg})`}} 
                 alt='divers' 
                 >
                 </div> */}
-                <div>
-                    <h2 >Dive Site Locations</h2>
+                <div className='wrapper'>
+                <div id='title'><h2 >Dive Site Locations</h2></div>
                     <div id="images-container-locs">
 
                         <ul id='loc-image-ul'>

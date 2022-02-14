@@ -3,6 +3,19 @@ ul, li {
     list-style: none;
 }
 
+.wrapper {
+
+    top: 90px;
+}
+
+#title {
+    position: fixed;
+    top: -10px;
+    color: white;
+    text-align: center;
+    margin-left: 80px;
+}
+
 .image {
     background-position: center;
     background-size: cover;
@@ -39,6 +52,7 @@ ul, li {
 }
 
 h2 {
+    top: 20px;
     font-weight: 600;
     text-align: center;
     font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif

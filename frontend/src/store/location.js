@@ -67,6 +67,7 @@ export const getLocation = (id) => async (dispatch) => {
 // POST /api/location/new
 export const createLocation = (payload) => async (dispatch) => {
     const { userId, title, body, address, city, state, zipCode } = payload;
+    console.log('add location =====>', payload);
     const res = await csrfFetch('/api/location', {
         method: 'POST',
         headers: { ' Content-Type': 'application/json'},

@@ -1,7 +1,7 @@
 
 .edit-location-container {
     margin: auto 0;
-    background-color: pink;
+    /* background-color: pink; */
 }
 
 .edit-location {
@@ -58,8 +58,8 @@
 
 
 .submit-btn-loc-edit{
-
-
+    background-color: rgba(210, 105, 30, 0.359);
+    color: red;
 
 }
 

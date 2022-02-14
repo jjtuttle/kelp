@@ -15,8 +15,10 @@ const Location = () => {
     const { id } = useParams();
     const loc = useSelector((state) => state.location[id]);
     const userId = useSelector((state) => state.session.user?.id);
-
+    // const url = useState(loc?.Images[0].url);
     const location = useSelector((state) => Object.values(state.location));
+
+    // console.log('URL useState -------------_>', url);
 
     const [showEdit, setShowEdit] = useState(false);
 
@@ -28,17 +30,12 @@ const Location = () => {
     }, [dispatch, id]);
 
     if(!id) {
-        console.log('NOTHING FOUND!', loc);
-        return null;
+        return <p> Something went wrong, go back and try again.</p>
     }
-
-    // location.map((loc) => {
-    //     return console.log('USER ------->', userId);
-    // });
 
     const handleDelete = (e) => {
         dispatch(deleteLocation(id));
-        // redirect();
+        history.goBack('/locations');
     }
 
     const editLocationClick = (e) => {
