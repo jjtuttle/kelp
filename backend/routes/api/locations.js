@@ -37,8 +37,6 @@ router.get('/:id', asyncHandler(async (req, res) => {
 
 //TODO: POST
 router.post('/location', csrfProtection, asyncHandler(async(req, res) => {
-    const { title, body, city, state, zipCode } = req.body;
-    console.log('POST A NEW LOCATION -------> ',title, body, city, state, zipCode);
     const location = await Location.create(req.body);
     const image = await Image.create({
         url: req.body.image.url,
@@ -54,11 +52,8 @@ router.put('/:id',csrfProtection, asyncHandler(async (req, res) => {
     
     const locationId = Number(req.params.id);
     const loc = await Location.findByPk(locationId, {include: {model: User} })
-    // console.log('locationddddddddddd::::::',loc);
     const imageUrl = req.body.image.url;
     const image = await Image.findByPk(req.params.id);
-    // const location = await Location.findByPk(locationId);
-    // const user = await User.findByPk()
     const newUrlImage = {
         id: image.id,
         locationId: loc.id,
