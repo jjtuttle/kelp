@@ -27,4 +27,9 @@ This project is currently in development. Users can add a dive site location: Im
       * `npx dotenv sequelize db:seed:all`<br /><br />
 8. Start the services in the backend directory<br /><br />
       * `npm start`<br /><br />
-9. Start
+9. Start the services in the frontend directory, whih then should open the project in your default browser. If not, open a tab and navigate to: http://localhost:3000 <br /><br />
+      * `npm start` <br /><br />
+
+10. The splash page will launch and from there you can login with the *Demo User* button automatically, *signup* and create your own login (within the validations), or *login* with a current user.
+
+
