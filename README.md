@@ -6,7 +6,7 @@ An application used to Create/Read/Update/Delete Dive Site Locations by user, bu
 This project is currently in development. Users can add a dive site location: Image, Title, Body of text, and city, state, state, and zip code are optional. Functionality to sort is in progress as wwell as adding comments to a dive site currentlly.
 
 ## Screen Shot(s)
-<br />
+<br /> *Comming soon....*<br />
 [SCREENSHOT] <br />
 [SCREENSHOT] <br /><br />
 
@@ -31,6 +31,6 @@ This project is currently in development. Users can add a dive site location: Im
       * `npm start` <br /><br />
 
 10. The splash page will launch and from there you can login with the *Demo User* button automatically, *signup* and create your own login (within the validations), or *login* with a current user.<br /><br />
-11. Once logged in, navigate to Locations to see a list of dive site postings, click add a location to add your own, or *[comming soon]* add a review to a posted dive site location
+11. Once logged in, navigate to Locations to see a list of dive site postings, click add a location to add your own, or *[comming soon...]* add a review to a posted dive site location
 
 
