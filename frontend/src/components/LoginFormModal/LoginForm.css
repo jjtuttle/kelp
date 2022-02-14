@@ -94,60 +94,6 @@
 }
 
 
-/* third party buttons for login */
-
-.third-party-logins {
-    margin: 24px;
-
-}
-
-.facebook {
-    margin: 8px 0px;
-
-}
-
-.facebook-btn {
-    color: #fff;
-    background: #1877f2;
-    border: 1px solid #1877f2;
-    height: 30px;
-    width: 250px;
-    padding: 1px 13px;
-    border-radius: 3px;
-
-}
-
-.google {
-    margin: 8px 0px;
-
-}
-.google-btn {
-    color: #666;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    height: 30px;
-    width: 250px;
-    padding: 1px 13px;
-    border-radius: 3px;
-
-}
-
-.apple {
-    margin: 8px 0px;
-
-}
-
-.apple-btn {
-    color: #fff;
-    background: #000;
-    border: 1px solid #000;
-    height: 30px;
-    width: 250px;
-    padding: 1px 13px;
-    border-radius: 3px;
-
-}
-
 
 .or {
     margin: 24px;

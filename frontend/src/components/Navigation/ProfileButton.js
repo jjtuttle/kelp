@@ -34,7 +34,14 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
+      <button onClick={openMenu}
+       style={{ backgroundColor:'transparent', 
+                    color:'white',
+                    border:'1px solid white',
+                    borderRadius:'8px',
+                    fontWeight:'700',
+                    fontSize: '14px' }}
+      >
         <i className="fas fa-user-circle" />
       </button>
       {showMenu && (
@@ -42,7 +49,14 @@ function ProfileButton({ user }) {
           <li>{user.username}</li>
           <li>{user.email}</li>
           <li>
-            <button style={{background: 'orange'}} onClick={logout}>Log Out</button>
+            <button style={{backgroundColor:'transparent', 
+                    color:'white',
+                    border:'1px solid white',
+                    borderRadius:'8px',
+                    fontWeight:'700',
+                    fontSize: '14px'
+          }}
+          onClick={logout}>Log Out</button>
           </li>
         </ul>
       )}

@@ -48,17 +48,6 @@ function LoginForm() {
           <p className="login-info">
             New to Yelp? [SIGN UP] By logging in, you agree to Kelp’s [TERMS OF SERVICE] and [PRIVACY POLICY].
           </p>
-          <div className="third-party-logins">
-            <div className="facebook">
-              <button className="facebook-btn" onClick={(e) => e.preventDefault.default()}>Continue with Facebook</button>
-            </div>
-            <div className="google">
-              <button className="google-btn">Continue with Google</button>
-            </div>
-            <div className="apple">
-              <button className="apple-btn">Continue with Apple</button>
-            </div>
-          </div>
           <div className="or">
            <p> <hr style={{display: 'inline-block', width: '100px', margin:'0'}}/><span style={{ padding: '10px', fontSize:'15px'}}>OR</span><hr style={{display:'inline-block', width: '100px', margin:'0'}}/></p>
           </div>

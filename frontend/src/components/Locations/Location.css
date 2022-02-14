@@ -14,16 +14,16 @@
     height: 800px;
     width: 800px;
     list-style: none;
-    border-bottom: 1px solid red;
+    /* border-bottom: 1px solid red; */
     margin: auto ;
-
+    
 }
 
 
 
 #image-container-loc {
-    padding-top: 50px;
-    margin-left: 0px;
+    padding-top: 35px;
+    margin-left: 10px;
 }
 
 #image-loc {
@@ -32,6 +32,7 @@
     object-fit: fill;
     padding: 5px;
     margin: 5px;
+    top:50px;
 }
 
 .body-loc {

@@ -9,6 +9,7 @@ import  Locations  from "./components/Locations/Locations";
 import Location from "./components/Locations/Location";
 import Footer from "./components/Footer/Footer";
 import AddLocation from './components/AddLocation/AddLocation'
+import PageNotFound from "./components/PageNotFound/PageNotFound";
 
 
 function App() {
@@ -26,24 +27,28 @@ function App() {
       {isLoaded && (
         <Switch>
 
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
-
           <Route exact path="/" >
             <LandingPage />
           </Route>
 
-          <Route exact path='/locations' >
-            <Locations />
+          <Route exact path="/signup">
+            <SignupFormPage />
           </Route>
 
-          <Route path='/location/:id'>
+          <Route exact path='/locations' >
+            <Locations  />
+          </Route>
+
+        <Route exact path='/location/new'>
+            <AddLocation />
+          </Route>
+
+          <Route exact path='/location/:id'>
             <Location />
           </Route>
 
-          <Route path='/location/new'>
-            <AddLocation />
+          <Route  >
+            <PageNotFound />
           </Route>
 
         </Switch>

@@ -10,7 +10,7 @@
     background-color: #ffe9e970;
     position: fixed;
     bottom: 0;
-    
+    z-index: 1000;
 }
 p {
     font-size: 12px;

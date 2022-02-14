@@ -46,10 +46,6 @@ const EditLocation = ({location, hideForm}) => {
         
     };
 
-    // useEffect(() => {
-    //     title = '';
-    // })
-
 
     return (
         <>
@@ -111,7 +107,9 @@ const EditLocation = ({location, hideForm}) => {
                     </label>
                 </div>
                 <div className="button-loc-edit">
-                    <button className="submit-btn-loc-edit" onClick={handleSubmit}>Submit</button>
+                    <button className="submit-btn-loc-edit" onClick={handleSubmit}
+                        style={{color:'white', backgroundColor: '#D32323'}}
+                    >Submit</button>
                 </div>
             </form>
         </div>
